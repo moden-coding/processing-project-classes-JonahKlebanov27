@@ -9,7 +9,7 @@ public class paddle {
 
 
      public paddle(){
-        setBoundaries();
+        setBoundariesP();
      }
     public void draw(PApplet p){
         p.rect(paddleX,600,100,20);
@@ -38,7 +38,7 @@ public class paddle {
         speedP=spp;
     }
 
-    public void setBoundaries(){
+    public void setBoundariesP(){
         leftBound=0;
         rightBound=700;
 

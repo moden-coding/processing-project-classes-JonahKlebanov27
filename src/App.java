@@ -40,14 +40,14 @@ public class App extends PApplet {
         }
 
         if(keyCode == UP){
-            myBall.setSpeedBall(-1);
+            myBall.setSpeedBall(-7);
         }
 
     }
 
     public void keyReleased() {
         myPaddle.setSpeedPaddle(0);
-        myBall.setSpeedBall(-1);
+        myBall.setSpeedBall(-7);
     }
 
 }
