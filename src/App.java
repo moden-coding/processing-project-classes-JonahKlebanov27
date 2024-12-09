@@ -14,6 +14,8 @@ public class App extends PApplet {
         myPaddle = new paddle();
         myBall = new ball();
 
+        myBall._paddle=myPaddle;
+
     }
 
     public void settings() {
@@ -47,7 +49,7 @@ public class App extends PApplet {
 
     public void keyReleased() {
         myPaddle.setSpeedPaddle(0);
-        myBall.setSpeedBall(-7);
+        //myBall.setSpeedBall(-7);
     }
 
 }
