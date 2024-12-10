@@ -1,6 +1,8 @@
 import processing.core.*;
 
 public class App extends PApplet {
+
+    ArrayList <Block> blocks;
     public static void main(String[] args) {
         PApplet.main("App");
     }
@@ -13,6 +15,7 @@ public class App extends PApplet {
         background(0, 200, 50);
         myPaddle = new paddle();
         myBall = new ball();
+        blocks = new ArrayList<>();
 
         myBall._paddle=myPaddle;
 
@@ -43,14 +46,14 @@ public class App extends PApplet {
 
         if(keyCode == UP){
             myBall.setSpeedBallY(-7);
-            myBall.setSpeedBallX(-1);
+            myBall.setSpeedBallX(-7);
         }
 
     }
 
     public void keyReleased() {
         myPaddle.setSpeedPaddle(0);
-        //myBall.setSpeedBall(-7);
+        
     }
 
 }

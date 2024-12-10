@@ -6,6 +6,8 @@ public class ball {
     private float speedBY;
     private float speedBX;
     private int topBound;
+    private int leftBound;
+    private int rightBound;
     public paddle _paddle;
    
     
@@ -38,7 +40,7 @@ public class ball {
     
 
 
-    if(ballY>=(10+speedBY/2) && ballY <= (10-speedBY/2)){ //ball bounce off topBoundary
+    if(ballY>=(10+speedBY/2) && ballY <= (10-speedBY/2)){ //ball bounce off topBound
         setSpeedBallY(speedBY*-1);
        }
         
@@ -47,10 +49,19 @@ public class ball {
            setSpeedBallY(speedBY*-1);
         }
     }
+          if(ballX>=(10+speedBX/2) && ballX<= (10-speedBX/2)){ //ball bounce off leftBound
+            setSpeedBallX(speedBX*-1);
+          }
+        if(ballX<=(690+speedBX/2) && ballX>=(690-speedBX/2)){
+                 setSpeedBallX(speedBX*-1);
+            }
     }
 
     public void setBoundariesB(){
         topBound=0;
+        leftBound=0;
+        rightBound=700;
+
 
     }
         
