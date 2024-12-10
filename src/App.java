@@ -42,7 +42,8 @@ public class App extends PApplet {
         }
 
         if(keyCode == UP){
-            myBall.setSpeedBall(-7);
+            myBall.setSpeedBallY(-7);
+            myBall.setSpeedBallX(-1);
         }
 
     }

@@ -6,6 +6,7 @@ public class paddle {
    private float speedP;
    private int leftBound;
    private int rightBound;
+   public int paddleWidth=100;
 
 
      public paddle(){
