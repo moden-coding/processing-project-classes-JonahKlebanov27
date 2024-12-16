@@ -5,6 +5,7 @@ public class ball {
     public int ballY=590;
     private float speedBY;
     private float speedBX;
+    private float radiusB=10;
     private int topBound;
     private int leftBound;
     private int rightBound;
@@ -18,7 +19,7 @@ public class ball {
         setBoundariesB();
      }
     public void draw(PApplet p){
-        p.ellipse(ballX, ballY, 20, 20);
+        p.ellipse(ballX, ballY, radiusB*2, radiusB*2);
         p.fill(0);
 
 
@@ -52,7 +53,7 @@ public class ball {
           if(ballX>=(10+speedBX/2) && ballX<= (10-speedBX/2)){ //ball bounce off leftBound
             setSpeedBallX(speedBX*-1);
           }
-        if(ballX<=(690+speedBX/2) && ballX>=(690-speedBX/2)){
+        if(ballX<=(690+speedBX/2) && ballX>=(690-speedBX/2)){ //ball bounce off rightBound
                  setSpeedBallX(speedBX*-1);
             }
     }
@@ -62,7 +63,7 @@ public class ball {
         leftBound=0;
         rightBound=700;
 
-
+        
     }
         
     

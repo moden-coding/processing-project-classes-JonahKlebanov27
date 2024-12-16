@@ -1,21 +1,23 @@
 import processing.core.*;
-
+import java.util.ArrayList;
 public class App extends PApplet {
 
-    ArrayList <Block> blocks;
+    //ArrayList <Block> blocks;
     public static void main(String[] args) {
         PApplet.main("App");
     }
 
     paddle myPaddle;
     ball myBall;
+    Block myBlock;
 
     public void setup() {
 
         background(0, 200, 50);
         myPaddle = new paddle();
         myBall = new ball();
-        blocks = new ArrayList<>();
+        myBlock= new Block();
+        //blocks = new ArrayList<>();
 
         myBall._paddle=myPaddle;
 
@@ -32,21 +34,22 @@ public class App extends PApplet {
         myPaddle.movePaddle();
         myBall.draw(this);
         myBall.moveBall();
+        myBlock.draw(this); 
 
     }
 
     public void keyPressed() {
 
         if (keyCode == RIGHT) {
-            myPaddle.setSpeedPaddle(10);
+            myPaddle.setSpeedPaddle(13);
 
         } else if (keyCode == LEFT) {
             myPaddle.setSpeedPaddle(-10);
         }
 
         if(keyCode == UP){
-            myBall.setSpeedBallY(-7);
-            myBall.setSpeedBallX(-7);
+            myBall.setSpeedBallY(-6);
+            //myBall.setSpeedBallX(-6);
         }
 
     }
