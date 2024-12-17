@@ -3,13 +3,27 @@ import java.util.ArrayList;
 public class App extends PApplet {
 
     //ArrayList <Block> blocks;
+    
     public static void main(String[] args) {
+        
+        
+
+
+        
         PApplet.main("App");
     }
+     
+    // public void test(){
+    //     if(blockX=100, )
+    // }
 
     paddle myPaddle;
     ball myBall;
     Block myBlock;
+    
+    //}
+
+
 
     public void setup() {
 

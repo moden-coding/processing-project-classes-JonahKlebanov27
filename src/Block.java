@@ -12,9 +12,15 @@ public class Block {
 public void draw(PApplet p){
 p.rect(blockX,blockY,blockWidth,blockHeight);
 
-}
-   
+if (circleIntersectsRectangle(ballX,ballY,radiusB,blockX,blockY,blockWidth,blockHeight)){
 
+    System.out.println("INTERCEPTION");
+
+}
+
+
+}
+  
 boolean circleIntersectsRectangle(float ballX, float ballY , float radiusB, float blockX, float blockY, float blockWidth, float blockHeight) {
     // Check for overlap in the x and y ranges
     float circleLeft = ballX - radiusB;
@@ -34,9 +40,9 @@ boolean circleIntersectsRectangle(float ballX, float ballY , float radiusB, floa
     }
 
     // Check if the circle's center is within the rectangle
-    if (ballX >= rectLeft && ballX <= rectRight && ballY >= rectTop && ballY <= rectBottom) {
-        return true; // Center is inside the rectangle, intersection occurs
-    }
+    // if (ballX >= rectLeft && ballX <= rectRight && ballY >= rectTop && ballY <= rectBottom) {
+    //     return true; // Center is inside the rectangle, intersection occurs
+    // }
 
     // Check if the circle intersects any edge of the rectangle
     float closestX = Math.max(rectLeft, Math.min(ballX, rectRight));
@@ -45,12 +51,11 @@ boolean circleIntersectsRectangle(float ballX, float ballY , float radiusB, floa
     float distanceX = ballX - closestX;
     float distanceY = ballY - closestY;
 
-    if( )
+    
 
     return (distanceX * distanceX + distanceY * distanceY) <= (radiusB * radiusB);
 }
-
-    
+  
 
 }
 
