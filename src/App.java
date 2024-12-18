@@ -7,21 +7,26 @@ public class App extends PApplet {
     public static void main(String[] args) {
         
         
-
+         test();
 
         
-        PApplet.main("App");
+        //PApplet.main("App");
     }
      
-    // public void test(){
-    //     if(blockX=100, )
-    // }
+     public static void test(){
+         
+        boolean test = Block.circleIntersectsRectangle(330,364 , 15, 335, 320, 30, 30);
+
+        System.out.println(test);
+
+        
+ }
 
     paddle myPaddle;
     ball myBall;
     Block myBlock;
     
-    //}
+    
 
 
 

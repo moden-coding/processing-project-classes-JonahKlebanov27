@@ -21,7 +21,7 @@ if (circleIntersectsRectangle(ballX,ballY,radiusB,blockX,blockY,blockWidth,block
 
 }
   
-boolean circleIntersectsRectangle(float ballX, float ballY , float radiusB, float blockX, float blockY, float blockWidth, float blockHeight) {
+public static boolean circleIntersectsRectangle(float ballX, float ballY , float radiusB, float blockX, float blockY, float blockWidth, float blockHeight) {
     // Check for overlap in the x and y ranges
     float circleLeft = ballX - radiusB;
     float circleRight = ballX + radiusB;
