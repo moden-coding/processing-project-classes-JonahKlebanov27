@@ -6,14 +6,13 @@ public class paddle {
    private float speedP;
    private int leftBound;
    private int rightBound;
-   public int paddleWidth=100;
-
+   public int paddleWidth=400;
 
      public paddle(){
         setBoundariesP();
      }
     public void draw(PApplet p){
-        p.rect(paddleX,600,100,20);
+        p.rect(paddleX,600,paddleWidth,20);
         p.fill(0,0,255);
 
     }
