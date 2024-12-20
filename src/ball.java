@@ -35,7 +35,7 @@ public class ball {
         ballY += speedBY;
         ballX += speedBX;
 
-        if (ballY >= (10 + speedBY / 2) && ballY <= (10 - speedBY / 2)) { // ball bounce off topBound
+        if ((ballY >= (10 + speedBY / 2) && ballY <= (10 - speedBY / 2)) || ballY<0 ) { // ball bounce off topBound
             setSpeedBallY(speedBY * -1);
         }
 
@@ -44,12 +44,14 @@ public class ball {
                                                                                             // bounce off paddle
             if (ballX >= _paddle.paddleX && ballX <= (_paddle.paddleX + _paddle.paddleWidth)) {
                 setSpeedBallY(speedBY * -1);
+                randomNudgeSpeed();
             }
+
         }
-        if (ballX >= (10 + speedBX / 2) && ballX <= (10 - speedBX / 2)) { // ball bounce off leftBound
+        if ((ballX >= (10 + speedBX / 2) && ballX <= (10 - speedBX / 2)) || ballX<0) { // ball bounce off leftBound
             setSpeedBallX(speedBX * -1);
         }
-        if (ballX <= (690 + speedBX / 2) && ballX >= (690 - speedBX / 2)) { // ball bounce off rightBound
+        if ((ballX <= (690 + speedBX / 2) && ballX >= (690 - speedBX / 2)) || ballX>700) { // ball bounce off rightBound
             setSpeedBallX(speedBX * -1);
         }
     }
@@ -60,5 +62,19 @@ public class ball {
         rightBound = 700;
 
     }
+    public void randomNudgeSpeed(){
+        float x = (float)(Math.random() * 0.2 + .9);
+        float newXSpeed= speedBX * x;
+        float newYSpeed = (float)Math.sqrt((double)(speedBX * speedBX + speedBY * speedBY - newXSpeed * newXSpeed) );
 
+        
+       if(speedBY<0){
+       speedBY=newYSpeed * -1;
+       } else{
+        speedBY=newYSpeed;
+       }
+
+       speedBX=newXSpeed;
+        
+}
 }
