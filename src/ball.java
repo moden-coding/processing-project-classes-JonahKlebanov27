@@ -62,7 +62,7 @@ public class ball {
         rightBound = 700;
 
     }
-    public void randomNudgeSpeed(){
+    public void randomNudgeSpeed(){                     //random angle code for bounce off paddle
         float x = (float)(Math.random() * 0.2 + .9);
         float newXSpeed= speedBX * x;
         float newYSpeed = (float)Math.sqrt((double)(speedBX * speedBX + speedBY * speedBY - newXSpeed * newXSpeed) );

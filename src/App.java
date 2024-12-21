@@ -11,6 +11,7 @@ public class App extends PApplet {
     ArrayList<Block> blocks;
     public int score;
     public int highScore;
+    int gameState=0;
 
     public static void main(String[] args) {
 
@@ -30,7 +31,7 @@ public class App extends PApplet {
 
     paddle myPaddle;
     ball myBall;
-    // Block myBlock;
+  
 
     public void setup() {
 
@@ -67,7 +68,27 @@ public class App extends PApplet {
     }
 
     public void draw() {
-        background(0, 200, 50);
+        
+        // textSize(30);
+        // text("highScore: " + highScore,50,650);
+
+
+        if(gameState==0){
+            showStartScreen(); 
+
+        }else if(gameState==1){  //for multiple screens
+            runGame();
+        }if(gameState==2){
+            showEndScreen();
+        }
+
+            if(myBall.ballY>700){
+               gameState=2;
+            }
+    }
+
+    public void runGame(){
+        background(20, 50, 40);
         myPaddle.draw(this);
         myPaddle.movePaddle();
         myBall.draw(this);
@@ -82,11 +103,39 @@ public class App extends PApplet {
 
         }
         textSize(30);
-        text("Score: " + score,500,650);
+        text("Score: " + score,350,650);
 
+    }
+
+    public void resetGame(){
+        myBall.ballX=350;
+        myBall.ballY=590;
+        myBall.setSpeedBallX(0);
+        myBall.setSpeedBallY(0);
+        myPaddle.paddleX=300;
+        setup();
+        score=0;
+
+    }
+
+    public void showStartScreen(){
+        background(0, 0, 128);
+        textSize(22);
+        text("Objective: Hit the ball with the paddle to destroy the blocks. \n Controls: use the up arrow key to launch the ball and use \n the left and right arrow keys to move the paddle. " ,350,200 );
+        textSize(40);
+        fill(255);
+        textAlign(CENTER, CENTER);
+        text("Press SPACE to Start", width / 2, height / 2);
+    }
+
+    public void showEndScreen(){
+        background(0, 0, 128);
         textSize(30);
-        text("highScore: " + highScore,50,650);
-
+        fill(255);
+        text("Score: " + score, 350,200);
+        text("High Score: " + highScore, 350,300);
+        textSize(40);
+        text("press ENTER to play again", 350,400);
 
     }
 
@@ -107,7 +156,14 @@ public class App extends PApplet {
 
             myBall.randomNudgeSpeed();
         }
-
+             if(gameState==0 && key ==' '){
+                gameState=1;
+             }
+             if(gameState==2 && key == '\n'){
+                gameState=1;
+                resetGame();
+                
+             }
     }
 
     public void keyReleased() {
