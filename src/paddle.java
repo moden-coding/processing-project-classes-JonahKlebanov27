@@ -19,7 +19,7 @@ public class paddle {
     public void movePaddle(){
         
 
-        if(speedP<0){
+        if(speedP<0){             // So the paddle knows when to stop at the right and left boundaries. 
             if(paddleX>leftBound){
                 paddleX+=speedP;
             }
@@ -34,11 +34,11 @@ public class paddle {
 
     }
 
-    public void setSpeedPaddle(float spp){
+    public void setSpeedPaddle(float spp){ //setting a variable for speedP
         speedP=spp;
     }
 
-    public void setBoundariesP(){
+    public void setBoundariesP(){ //boundaries for the paddle
         leftBound=0;
         rightBound=700;
 

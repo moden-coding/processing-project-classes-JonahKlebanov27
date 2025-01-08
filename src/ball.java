@@ -22,12 +22,12 @@ public class ball {
 
     }
 
-    public void setSpeedBallY(float spby) {
+    public void setSpeedBallY(float spby) {  //setting a variable for speedBY
         speedBY = spby;
 
     }
 
-    public void setSpeedBallX(float spbx) {
+    public void setSpeedBallX(float spbx) { // setting a variable for speedBX
         speedBX = spbx;
     }
 
@@ -35,28 +35,28 @@ public class ball {
         ballY += speedBY;
         ballX += speedBX;
 
-        if ((ballY >= (10 + speedBY / 2) && ballY <= (10 - speedBY / 2)) || ballY<0 ) { // ball bounce off topBound
+        if ((ballY >= (10 + speedBY / 2) && ballY <= (10 - speedBY / 2)) || ballY<0 ) { // ball bounce off topBound(top of the screen)
             setSpeedBallY(speedBY * -1);
         }
 
         if (speedBY != 0 && ballY <= (590 + speedBY / 2) && ballY >= (590 - speedBY / 2)) { // ball bounce off paddle
-                                                                                            // and know when to not
-                                                                                            // bounce off paddle
+                                                                                            // and know when to not bounce off paddle
+                                                                                             
             if (ballX >= _paddle.paddleX && ballX <= (_paddle.paddleX + _paddle.paddleWidth)) {
                 setSpeedBallY(speedBY * -1);
                 randomNudgeSpeed();
             }
 
         }
-        if ((ballX >= (10 + speedBX / 2) && ballX <= (10 - speedBX / 2)) || ballX<0) { // ball bounce off leftBound
+        if ((ballX >= (10 + speedBX / 2) && ballX <= (10 - speedBX / 2)) || ballX<0) { // ball bounce off leftBound(left side of the screen)
             setSpeedBallX(speedBX * -1);
         }
-        if ((ballX <= (690 + speedBX / 2) && ballX >= (690 - speedBX / 2)) || ballX>700) { // ball bounce off rightBound
+        if ((ballX <= (690 + speedBX / 2) && ballX >= (690 - speedBX / 2)) || ballX>700) { // ball bounce off rightBound(right side of the screen)
             setSpeedBallX(speedBX * -1);
         }
     }
 
-    public void setBoundariesB() {
+    public void setBoundariesB() {  //boundaries for the ball
         topBound = 0;
         leftBound = 0;
         rightBound = 700;
@@ -68,7 +68,7 @@ public class ball {
         float newYSpeed = (float)Math.sqrt((double)(speedBX * speedBX + speedBY * speedBY - newXSpeed * newXSpeed) );
 
         
-       if(speedBY<0){
+       if(speedBY<0){            //if the ball is traveling up, reverse the direction of the ball
        speedBY=newYSpeed * -1;
        } else{
         speedBY=newYSpeed;

@@ -7,7 +7,7 @@ public class Block {
     public int blockWidth = 25;
     public int blockHeight = 25;
 
-    public Block(int x, int y) {
+    public Block(int x, int y) { //setting variables for blockX or blockY
         blockX = x;
         blockY = y;
 
@@ -18,7 +18,7 @@ public class Block {
 
     }
 
-    public boolean circleTouching(float ballX, float ballY, float radiusB) {  //this is chatGPT code;
+    public boolean circleTouching(float ballX, float ballY, float radiusB) {  //this is chatGPT code that I modified for detecting if the ball is touching the block. 
 
         // Check for overlap in the x and y ranges
         float circleLeft = ballX - radiusB;
@@ -47,7 +47,7 @@ public class Block {
         return (distanceX * distanceX + distanceY * distanceY) <= (radiusB * radiusB);
     }
 
-    public boolean topBottom(float ballX) {
+    public boolean topBottom(float ballX) {    // then these booleans return true if the ball is touching the block and return false if it isn't
 
         if (ballX <= blockX + blockWidth && ballX >= blockX) {
             return true;
